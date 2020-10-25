@@ -12,13 +12,7 @@ export default function App() {
     console.log('pressing button');
   }
   return (
-    <View style={{
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center"
-    }}>
-      <AppButton title={'Login'} onPress={handlePress} />
-    </View>
+    <WelcomeScreen />
   );
 }
 
