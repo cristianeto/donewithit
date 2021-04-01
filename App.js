@@ -5,7 +5,6 @@ import ViewImageScreen from './app/screens/ViewImageScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
-import MyAccountScreen from './app/screens/MyAccountScreen';
 import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
