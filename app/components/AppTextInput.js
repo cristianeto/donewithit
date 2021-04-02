@@ -1,6 +1,7 @@
 import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import PropTypes from "prop-types";
 
 import defaultStyles from "../config/styles";
 
@@ -33,5 +34,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 });
+
+AppTextInput.propTypes = {
+  icon: PropTypes.string.isRequired,
+};
 
 export default AppTextInput;
