@@ -9,10 +9,9 @@ import ListItemDeleteAction from "../components/ListItemDeleteAction";
 const initialMessages = [
   {
     id: 1,
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ante justo, eget eleifend mauris facilisis sed. Fusce congue rhoncus massa, ut mattis mauris. Suspendisse non ex ultricies, tincidunt sapien non, vulputate ipsum. Etiam sit amet mi eu dui imperdiet rhoncus. Donec nunc quam, sagittis eget orci viverra, efficitur varius.",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ante justo, eget eleifend mauris facilisis sed. Fusce congue rhoncus massa, ut mattis mauris. Suspendisse non ex ultricies, tincidunt sapien non, vulputate ipsum. Etiam sit amet mi eu dui imperdiet rhoncus. Donec nunc quam, sagittis eget orci viverra, efficitur varius.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ante justo, eget eleifend mauris facilisis sed.",
     image: require("../assets/cristianguaman.png"),
   },
   {

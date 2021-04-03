@@ -4,8 +4,10 @@ import { SafeAreaView, StyleSheet, View } from "react-native";
 
 function Screen({ children, style }) {
   return (
-    <SafeAreaView style={[styles.screen]}>
-      <View style={style}>{children}</View>
+    // !este estilo esta definido en el curso pero no me valia a mi
+    <SafeAreaView style={[styles.screen, style]}>
+      {/* <SafeAreaView style={[styles.screen]}> //*Este codigo si me valia */}
+      <View style={[styles.view, style]}>{children}</View>
     </SafeAreaView>
   );
 }
@@ -13,6 +15,9 @@ function Screen({ children, style }) {
 const styles = StyleSheet.create({
   screen: {
     paddingTop: Constants.statusBarHeight,
+    flex: 1,
+  },
+  view: {
     flex: 1,
   },
 });
