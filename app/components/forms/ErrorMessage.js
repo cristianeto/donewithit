@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import PropTypes from "prop-types";
 
-import AppText from "./AppText";
+import AppText from "../AppText";
 
 function ErrorMessage({ error, visible }) {
   if (!visible || !error) return null;
@@ -15,8 +14,4 @@ const styles = StyleSheet.create({
   },
 });
 
-ErrorMessage.propTypes = {
-  error: PropTypes.string,
-  visible: PropTypes.boolean,
-};
 export default ErrorMessage;
