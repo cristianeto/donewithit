@@ -30,7 +30,7 @@ function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
             />
           )}
           {selectedItem ? (
-            <AppText style={styles.text}>selectedItem.label</AppText>
+            <AppText style={styles.text}>{selectedItem.label}</AppText>
           ) : (
             <AppText style={styles.placeholder}>{placeholder}</AppText>
           )}
