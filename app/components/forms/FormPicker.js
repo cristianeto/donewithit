@@ -1,5 +1,5 @@
 import React from "react";
-import AppPicker from "../AppPicker";
+import AppPicker from "../Picker";
 import { useFormikContext } from "formik";
 import ErrorMessage from "./ErrorMessage";
 

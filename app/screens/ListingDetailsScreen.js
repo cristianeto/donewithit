@@ -1,13 +1,16 @@
-import React from 'react';
-import { Image, View, StyleSheet } from 'react-native';
-import AppText from '../components/AppText';
-import colors from '../config/colors';
-import ListItem from '../components/ListItem';
+import React from "react";
+import { Image, View, StyleSheet } from "react-native";
+import AppText from "../components/Text";
+import colors from "../config/colors";
+import ListItem from "../components/ListItem";
 
 function ListingDetailsScreen(props) {
   return (
     <View>
-      <Image style={styles.image} source={require('../assets/jacket.jpg')}></Image>
+      <Image
+        style={styles.image}
+        source={require("../assets/jacket.jpg")}
+      ></Image>
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>Red Jacket for sale!</AppText>
         <AppText style={styles.price}>$100</AppText>
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    width: '100%',
+    width: "100%",
     height: 300,
   },
   price: {
@@ -43,6 +46,6 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     marginVertical: 40,
-  }
-})
+  },
+});
 export default ListingDetailsScreen;
