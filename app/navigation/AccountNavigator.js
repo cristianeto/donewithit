@@ -6,13 +6,11 @@ import MessagesScreen from "../screens/MessagesScreen";
 
 const Stack = createStackNavigator();
 
-const AccountNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Account" component={AccountScreen} />
-      <Stack.Screen name="Messages" component={MessagesScreen} />
-    </Stack.Navigator>
-  );
-};
+const AccountNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Account" component={AccountScreen} />
+    <Stack.Screen name="Messages" component={MessagesScreen} />
+  </Stack.Navigator>
+);
 
 export default AccountNavigator;

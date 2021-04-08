@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, Platform, StyleSheet } from "react-native";
 
 import Card from "../components/Card";
 import colors from "../config/colors";
@@ -9,7 +9,7 @@ import Screen from "../components/Screen";
 const listings = [
   {
     id: 1,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Red jacket for sale",
     price: 100,
     image: require("../assets/jacket.jpg"),
   },
@@ -29,10 +29,10 @@ function ListingsScreen({ navigation }) {
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
           <Card
+            title={item.title}
+            subTitle={"$" + item.price}
             image={item.image}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-            subTitle={"$" + item.price}
-            title={item.title}
           />
         )}
       />
@@ -42,7 +42,7 @@ function ListingsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 20,
+    padding: Platform.OS === "ios" ? 20 : 10,
     backgroundColor: colors.light,
   },
 });
