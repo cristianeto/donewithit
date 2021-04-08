@@ -2,24 +2,24 @@ import React, { useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import Screen from "../components/Screen";
-import ListItem from "../components/ListItem";
-import ListItemSepatator from "../components/ListItemSepatator";
-import ListItemDeleteAction from "../components/ListItemDeleteAction";
+import {
+  ListItem,
+  ListItemDeleteAction,
+  ListItemSeparator,
+} from "../components/lists";
 
 const initialMessages = [
   {
     id: 1,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ante justo, eget eleifend mauris facilisis sed.",
+    title: "Cristian Guamán",
+    description: "Hey! Is this item still available?",
     image: require("../assets/cristianguaman.png"),
   },
   {
     id: 2,
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ante justo, eget eleifend mauris facilisis sed. Fusce congue rhoncus massa, ut mattis mauris. Suspendisse non ex ultricies, tincidunt sapien non, vulputate ipsum. Etiam sit amet mi eu dui imperdiet rhoncus. Donec nunc quam, sagittis eget orci viverra, efficitur varius.",
+    title: "Mosh Hamedani",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ante justo, eget eleifend mauris facilisis sed. Fusce congue rhoncus massa, ut mattis mauris. Suspendisse non ex ultricies, tincidunt sapien non, vulputate ipsum. Etiam sit amet mi eu dui imperdiet rhoncus. Donec nunc quam, sagittis eget orci viverra, efficitur varius.",
+      "I'm interested in this item. When will you be able to post it?",
     image: require("../assets/mosh.jpg"),
   },
 ];
@@ -27,12 +27,12 @@ const initialMessages = [
 function MessagesScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
   const [refreshing, setRefreshing] = useState(false);
+
   const handleDelete = (message) => {
-    //delete message from messages array
-    const newMessages = messages.filter((msg) => msg.id !== message.id);
-    setMessages(newMessages);
-    //call the server
+    // Delete the message from messages
+    setMessages(messages.filter((m) => m.id !== message.id));
   };
+
   return (
     <Screen>
       <FlatList
@@ -43,14 +43,13 @@ function MessagesScreen(props) {
             title={item.title}
             subTitle={item.description}
             image={item.image}
-            onPress={() => console.log("Message selected!", item)}
+            onPress={() => console.log("Message selected", item)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
-            showChevrons
           />
         )}
-        ItemSeparatorComponent={() => <ListItemSepatator />}
+        ItemSeparatorComponent={ListItemSeparator}
         refreshing={refreshing}
         onRefresh={() => {
           setMessages([
@@ -67,7 +66,6 @@ function MessagesScreen(props) {
   );
 }
 
-const styles = StyleSheet.create({
-  separator: {},
-});
+const styles = StyleSheet.create({});
+
 export default MessagesScreen;
