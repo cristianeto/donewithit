@@ -8,8 +8,7 @@ import colors from "../config/colors";
 const listings = [
   {
     id: 1,
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ante justo, eget eleifend mauris facilisis sed. Fusce congue rhoncus massa, ut mattis mauris. Suspendisse non ex ultricies, tincidunt sapien non, vulputate ipsum. Etiam sit amet mi eu dui imperdiet rhoncus. Donec nunc quam, sagittis eget orci viverra, efficitur varius.",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: 100,
     image: require("../assets/jacket.jpg"),
   },
@@ -21,7 +20,7 @@ const listings = [
   },
 ];
 
-function ListingsScreen(props) {
+function ListingsScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <FlatList
@@ -29,9 +28,10 @@ function ListingsScreen(props) {
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
           <Card
-            title={item.title}
-            subTitle={"$" + item.price}
             image={item.image}
+            onPress={() => navigation.navigate("ListingDetails", item)}
+            subTitle={"$" + item.price}
+            title={item.title}
           />
         )}
       />
