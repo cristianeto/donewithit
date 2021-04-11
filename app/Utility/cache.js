@@ -41,4 +41,5 @@ const isExpired = (item) => {
 
 export default {
   store,
+  get,
 };
