@@ -4,9 +4,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons/";
 import * as Notifications from "expo-notifications";
 import * as Permissions from "expo-permissions";
 
-import ListingEditScreen from "../screens/ListingEditScreen";
-import FeedNavigator from "./FeedNavigator";
 import AccountNavigator from "./AccountNavigator";
+import expoPushTokensApi from "../api/expoPushTokens";
+import FeedNavigator from "./FeedNavigator";
+import ListingEditScreen from "../screens/ListingEditScreen";
 import NewListingButton from "./NewListingButton";
 import routes from "./routes";
 
@@ -23,7 +24,7 @@ const AppNavigator = () => {
       if (!permission.granted) return;
 
       const token = await Notifications.getExpoPushTokenAsync();
-      console.log(token);
+      expoPushTokensApi.register(token);
     } catch (error) {
       console.log("Error getting a push token", error);
     }
