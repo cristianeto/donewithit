@@ -23,6 +23,9 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "Sell your stuffs that you dont need anymore"
+    "description": "Sell your stuffs that you dont need anymore",
+    "notification": {
+      "iosDisplayInForeground": true
+    }
   }
 }

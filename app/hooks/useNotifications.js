@@ -4,6 +4,14 @@ import * as Permissions from "expo-permissions";
 
 import expoPushTokensApi from "../api/expoPushTokens";
 
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: false,
+    shouldSetBadge: false,
+  }),
+});
+
 export default useNotifications = (notificationListener) => {
   useEffect(() => {
     registerForPushNotification();
